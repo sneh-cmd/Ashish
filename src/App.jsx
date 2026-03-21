@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
@@ -21,13 +21,13 @@ function App() {
       {!welcomeComplete ? (
         <WelcomeScreen onWelcomeComplete={() => setWelcomeComplete(true)} />
       ) : (
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route index element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Analytics />
-        </BrowserRouter>
+        </HashRouter>
       )}
     </ThemeProvider>
   );
