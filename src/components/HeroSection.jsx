@@ -112,11 +112,11 @@ export const HeroSection = () => {
         <motion.div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-8" initial="hidden" animate={isInView ? "visible" : "hidden"} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.25, delayChildren: 0.5 } } }}>
           
           <div className="flex-1 text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
-            <motion.div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-8 backdrop-blur-sm" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
-              <Briefcase className="h-4 w-4" /> Currently Accepting new Opportunities
+            <motion.div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-6 sm:mb-8 backdrop-blur-sm" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
+              <Briefcase className="h-3 sm:h-4 w-3 sm:w-4" /> Currently Accepting new Opportunities
             </motion.div>
 
-            <motion.h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
+            <motion.h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:text-6xl font-bold leading-tight tracking-tight" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               <span className="block text-foreground">I'm Ashish</span>
               <span className="block text-primary">Bhalsod</span>
               <motion.span className="block bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent mt-2" animate={{ backgroundPosition: ['0%', '100%', '0%'] }} transition={{ duration: 8, repeat: Infinity }} style={{ backgroundSize: '200% 100%' }}>
@@ -124,51 +124,51 @@ export const HeroSection = () => {
               </motion.span>
             </motion.h1>
 
-            <motion.p className="text-lg sm:text-xl text-muted-foreground mt-6 leading-relaxed max-w-2xl" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
+            <motion.p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-4 sm:mt-6 leading-relaxed max-w-2xl mx-auto" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               I build <span className="text-primary font-semibold">high-performance web and mobile applications</span> with 5+ years of experience in React.js, Node.js, React Native, and iOS development.
             </motion.p>
 
-            <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-4 my-8" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
+            <motion.div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 my-6 sm:my-8" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               {achievements.map((achievement, index) => (
-                <div key={index} className="text-center p-4 rounded-xl bg-background/60 border border-border/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
+                <div key={index} className="text-center p-3 sm:p-4 rounded-xl bg-background/60 border border-border/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     {achievement.icon}
-                    <div className="text-2xl font-bold text-foreground">{achievement.number}</div>
+                    <div className="text-lg sm:text-xl font-bold text-foreground">{achievement.number}</div>
                   </div>
                   <div className="text-xs text-muted-foreground">{achievement.label}</div>
                 </div>
               ))}
             </motion.div>
 
-            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
+            <motion.div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start" variants={{ hidden: { y: 30, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { duration: 0.8 } } }}>
               <motion.button 
                 onClick={() => handleNavClick("#projects")}
-                className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold bg-gradient-to-r from-primary to-purple-600 text-primary-foreground shadow-lg hover:shadow-xl text-sm flex items-center justify-center gap-3" 
+                className="group relative overflow-hidden px-6 sm:px-8 py-2 sm:py-4 rounded-xl font-semibold bg-gradient-to-r from-primary to-purple-600 text-primary-foreground shadow-lg hover:shadow-xl text-xs sm:text-sm flex items-center justify-center gap-3" 
                 whileHover={{ scale: 1.05, y: -2 }} 
                 whileTap={{ scale: 0.95 }}
               >
-                <Code className="h-5 w-5" /> 
+                <Code className="h-4 sm:h-5 w-4 sm:w-5" /> 
                 <span>View Case Studies</span>
-                <TrendingUp className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <TrendingUp className="h-3 sm:h-4 w-3 sm:w-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               
               <motion.button 
                 onClick={() => handleNavClick("#contact")}
-                className="group relative overflow-hidden px-8 py-4 rounded-xl font-semibold border border-primary/50 text-foreground hover:border-primary transition-all duration-300 bg-background/80 backdrop-blur-sm text-sm flex items-center justify-center gap-3" 
+                className="group relative overflow-hidden px-6 sm:px-8 py-2 sm:py-4 rounded-xl font-semibold border border-primary/50 text-foreground hover:border-primary transition-all duration-300 bg-background/80 backdrop-blur-sm text-xs sm:text-sm flex items-center justify-center gap-3" 
                 whileHover={{ scale: 1.05, y: -2 }} 
                 whileTap={{ scale: 0.95 }}
               >
-                <Mail className="h-4 w-4" /> 
+                <Mail className="h-3 sm:h-4 w-3 sm:w-4" /> 
                 <span>Technical Interview</span>
               </motion.button>
               
               <motion.button 
                 onClick={handleViewResume}
-                className="group relative overflow-hidden px-6 py-4 rounded-xl font-semibold border border-border text-muted-foreground hover:border-primary/30 transition-all duration-300 bg-background/60 backdrop-blur-sm text-sm flex items-center justify-center gap-2" 
+                className="group relative overflow-hidden px-4 sm:px-6 py-2 sm:py-4 rounded-xl font-semibold border border-border text-muted-foreground hover:border-primary/30 transition-all duration-300 bg-background/60 backdrop-blur-sm text-xs sm:text-sm flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.05, y: -2 }} 
                 whileTap={{ scale: 0.95 }}
               >
-                <Download className="h-4 w-4" /> 
+                <Download className="h-3 sm:h-4 w-3 sm:w-4" /> 
                 <span>View Resume</span>
               </motion.button>
             </motion.div>
