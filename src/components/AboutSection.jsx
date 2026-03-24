@@ -25,10 +25,10 @@ export const AboutSection = () => {
   const features = ["Full-stack expertise", "React Native development", "iOS app development", "RESTful API integration", "App publishing experience", "5+ years industry experience"];
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, href: "https://github.com/ashishbhalsod" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/ashishbhalsod" },
-    { icon: <Phone className="h-5 w-5" />, href: "tel:+918866163038" },
-    { icon: <Mail className="h-5 w-5" />, href: "mailto:ashishbhalsod21@gmail.com" }
+    { icon: <Github className="h-5 w-5" />, href: "https://github.com/ashishbhalsod", external: true },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/ashishbhalsod", external: true },
+    { icon: <Phone className="h-5 w-5" />, href: "tel:+918866163038", external: false },
+    { icon: <Mail className="h-5 w-5" />, href: "mailto:ashishbhalsod21@gmail.com", external: false }
   ];
 
   const tabContent = {
@@ -71,19 +71,19 @@ export const AboutSection = () => {
 
       <div className="container mx-auto max-w-7xl relative px-2 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20 px-2 sm:px-6">
-          <div className="inline-flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-2xl bg-primary/10 border border-primary/20 mb-6 transition-all duration-500 hover:bg-primary/15 hover:scale-105 group cursor-pointer">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 px-2 sm:px-6">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1 sm:py-2 rounded-xl sm:rounded-2xl bg-primary/10 border border-primary/20 mb-4 sm:mb-6 transition-all duration-500 hover:bg-primary/15 hover:scale-105 group cursor-pointer">
             <div className="relative">
-              <Sparkles className="h-4 sm:h-5 w-4 sm:w-5 text-primary animate-pulse" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping" />
+              <Sparkles className="h-3 sm:h-4 w-3 sm:w-4 text-primary animate-pulse" />
+              <div className="absolute -top-1 -right-1 w-1.5 sm:w-2 h-1.5 sm:h-2 bg-primary rounded-full animate-ping" />
             </div>
-            <span className="text-sm sm:text-base font-semibold text-primary tracking-wide">ABOUT ME</span>
+            <span className="text-xs sm:text-sm font-semibold text-primary tracking-wide">ABOUT ME</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl lg:text-7xl font-bold mb-3 sm:mb-6">
             <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Transforming</span>
             <span className="block text-primary animate-pulse">Ideas Into Reality</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Building digital experiences that combine <span className="text-primary font-semibold">innovation</span>, <span className="text-primary font-semibold">performance</span>, and <span className="text-primary font-semibold">elegance</span>
           </p>
         </div>
@@ -132,12 +132,12 @@ export const AboutSection = () => {
                 </div>
 
                 {/* Tabs */}
-                <div className="flex flex-col sm:flex-row border-b border-border mb-4 sm:mb-6">
+                <div className="flex border-b border-border mb-4 sm:mb-6 gap-2 sm:gap-0">
                   {['personal', 'professional', 'approach'].map(tab => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
-                      className={`flex-1 py-2 sm:py-3 px-2 sm:px-4 text-sm sm:text-base font-medium transition-all duration-300 ${activeTab === tab ? 'text-primary border-b-2 border-primary' : 'text-muted-foreground hover:text-foreground'}`}
+                      className={`flex-1 py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm font-medium transition-all duration-300 min-w-0 ${activeTab === tab ? 'text-primary border-b-2 border-primary' : 'text-muted-foreground hover:text-foreground'}`}
                     >
                       {tab.charAt(0).toUpperCase() + tab.slice(1)}
                     </button>
@@ -153,7 +153,7 @@ export const AboutSection = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
-                      className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed"
+                      className="text-xs sm:text-sm md:text-base text-muted-foreground leading-normal"
                     >
                       {tabContent[activeTab]}
                     </motion.p>
@@ -190,17 +190,17 @@ export const AboutSection = () => {
           {/* Right Column */}
           <div className="space-y-6 sm:space-y-8">
             {/* Work Together */}
-            <div className="bg-card/50 border border-border rounded-3xl p-4 sm:p-6 md:p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:border-primary/40 hover:bg-card/60">
-              <h3 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 text-center">Let's Work Together</h3>
-              <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
-                <a href="#contact" className="flex-1 block w-full p-3 sm:p-4 bg-primary text-primary-foreground rounded-xl text-center font-semibold transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg group">
+            <div className="bg-card/50 border border-border rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 backdrop-blur-xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:border-primary/40 hover:bg-card/60">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 sm:mb-4 text-center">Let's Work Together</h3>
+              <div className="flex flex-row space-x-4">
+                <a href="#contact" className="flex-1 block w-full p-2 sm:p-3 md:p-4 bg-primary text-primary-foreground rounded-xl text-center text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 hover:bg-primary/90 hover:scale-105 hover:shadow-lg group">
                   <div className="flex items-center justify-center gap-2 sm:gap-3"><User className="h-4 sm:h-5 w-4 sm:w-5 group-hover:scale-110 transition-transform duration-300" />Start a Project</div>
                 </a>
 
                 {/* Download Button */}
                 <button
                   onClick={handleDownload}
-                  className="flex-1 block w-full p-3 sm:p-4 border border-border rounded-xl text-center font-semibold transition-all duration-300 hover:bg-accent hover:border-primary/30 hover:scale-105 hover:shadow-lg group"
+                  className="flex-1 block w-full p-2 sm:p-3 md:p-4 border border-border rounded-xl text-center text-xs sm:text-sm md:text-base font-semibold transition-all duration-300 hover:bg-accent hover:border-primary/30 hover:scale-105 hover:shadow-lg group"
                 >
                   <div className="flex items-center justify-center gap-2 sm:gap-3">
                     <Download className="h-4 sm:h-5 w-4 sm:w-5 group-hover:translate-y-0.5 transition-transform duration-300" />
@@ -214,7 +214,14 @@ export const AboutSection = () => {
                 <h4 className="font-semibold mb-2 text-center text-sm sm:text-base">Quick Connect</h4>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                   {socialLinks.map((social, index) => (
-                    <a key={index} href={social.href} className="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110">{social.icon}</a>
+                    <a 
+                      key={index} 
+                      href={social.href} 
+                      {...(social.external && { target: "_blank", rel: "noopener noreferrer" })}
+                      className="p-2 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300 hover:scale-110"
+                    >
+                      {social.icon}
+                    </a>
                   ))}
                 </div>
               </div>

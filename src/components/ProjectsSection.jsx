@@ -192,36 +192,36 @@ export const ProjectsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl relative">
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Sparkles className="h-4 w-4" />
+            <Sparkles className="h-3 sm:h-4 w-3 sm:w-4" />
             My Projects
           </motion.div>
 
           <motion.h2 
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
             Project
-            <span className="block text-primary">Portfolio</span>
+            <span className="text-primary"> Portfolio</span>
           </motion.h2>
 
           <motion.p 
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -233,20 +233,20 @@ export const ProjectsSection = () => {
 
         {/* Simple Filter */}
         <motion.div 
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex flex-wrap justify-center gap-2">
+          <div className="inline-flex flex-wrap justify-center gap-1 sm:gap-2">
             {categories.map((category) => (
               <motion.button
                 key={category}
                 onClick={() => handleFilterChange(category)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${
+                className={`px-3 sm:px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 border ${
                   activeFilter === category
                     ? "bg-primary text-primary-foreground border-primary"
                     : "bg-background text-muted-foreground border-border hover:border-primary hover:text-primary"
@@ -467,46 +467,51 @@ export const ProjectsSection = () => {
 
         {/* Simple CTA */}
         <motion.div 
-          className="text-center mt-20"
+          className="text-center mt-12 sm:mt-16 lg:mt-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="bg-background border border-border rounded-2xl p-12 max-w-4xl mx-auto">
+          <div className="bg-background border border-border rounded-2xl p-6 sm:p-8 md:p-12 max-w-4xl mx-auto">
             <motion.div
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6"
             >
-              <Zap className="h-4 w-4" />
+              <Zap className="h-3 sm:h-4 w-3 sm:w-4" />
               Get In Touch
             </motion.div>
 
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">Like what you see?</h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4">Like what you see?</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-8 max-w-2xl mx-auto">
               I'm always open to discussing new opportunities and interesting projects.
             </p>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.a
-                href="#contact"
+            <div className="flex flex-row justify-center gap-3 sm:gap-4">
+              <motion.button
+                onClick={() => {
+                  const element = document.querySelector('#contact');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-4 sm:px-6 py-2 sm:py-4 rounded-2xl text-xs sm:text-sm md:text-base font-medium bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"
               >
                 Contact Me
                 <ArrowRight size={18} />
-              </motion.a>
+              </motion.button>
               
               <motion.a
-                href="https://github.com/sahilmd01"
+                href="https://github.com/ashishbhalsod"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-medium border border-border text-foreground hover:border-primary hover:bg-primary/5 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-4 sm:px-6 py-2 sm:py-4 rounded-2xl text-xs sm:text-sm md:text-base font-medium border border-border text-foreground hover:border-primary hover:bg-primary/5 transition-all duration-300"
               >
                 <Github size={18} />
                 View GitHub

@@ -156,18 +156,18 @@ export const ExperienceSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
-            <Briefcase className="h-4 w-4" />
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+            <Briefcase className="h-3 sm:h-4 w-3 sm:w-4" />
             Professional Journey
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-6">
             <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
               Experience & Education
             </span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             My professional journey and educational background in software development
           </p>
         </motion.div>
@@ -182,8 +182,8 @@ export const ExperienceSection = () => {
               viewport={{ once: true }}
               className="mb-8"
             >
-              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center justify-center gap-3">
-                <Briefcase className="h-6 w-6 text-primary" />
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center justify-center gap-2 sm:gap-3">
+                <Briefcase className="h-5 sm:h-6 w-5 sm:w-6 text-primary" />
                 Work Experience
               </h3>
             </motion.div>
@@ -203,8 +203,8 @@ export const ExperienceSection = () => {
               viewport={{ once: true }}
               className="mb-8"
             >
-              <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center justify-center gap-3">
-                <GraduationCap className="h-6 w-6 text-primary" />
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-4 sm:mb-6 flex items-center justify-center gap-2 sm:gap-3">
+                <GraduationCap className="h-5 sm:h-6 w-5 sm:w-6 text-primary" />
                 Education
               </h3>
             </motion.div>
