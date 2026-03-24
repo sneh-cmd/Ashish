@@ -31,6 +31,17 @@ const navItems = [
   // { name: "Blog", href: "https://blogni.vercel.app", icon: BookOpen },
 ];
 
+const handleNavClick = (href) => {
+  if (href.startsWith('#')) {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  } else {
+    window.open(href, '_blank');
+  }
+};
+
 const ThemeToggle = () => {
   const [theme, setTheme] = useState("light");
 
@@ -261,9 +272,9 @@ export const Navbar = () => {
         <div className="flex items-center justify-center bg-white/80 dark:bg-black/80 backdrop-blur-md rounded-full shadow-lg p-2 border border-gray-200 dark:border-gray-700">
           <div className="flex space-x-1 items-center">
             {navItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 className={cn(
                   "p-2 rounded-full transition-colors flex flex-col items-center",
                   activeSection === item.href
@@ -274,7 +285,7 @@ export const Navbar = () => {
               >
                 <item.icon className="w-5 h-5" />
                 <span className="text-xs mt-1 hidden md:block">{item.name}</span>
-              </a>
+              </button>
             ))}
             <div className="flex items-center px-2">
               <ThemeToggle />
