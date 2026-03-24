@@ -16,6 +16,8 @@ import {
   Linkedin,
   Globe,
   Phone,
+  Award,
+  Trophy
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -23,7 +25,7 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { name: "Home", href: "#hero", icon: Home },
   { name: "About", href: "#about", icon: User },
-  { name: "Experience", href: "#experience", icon: Briefcase },
+  { name: "Experience", href: "#experience", icon: Trophy },
   { name: "Projects", href: "#projects", icon: Briefcase },
   { name: "Skills", href: "#skills", icon: Code },
   // { name: "Testimonials", href: "#testimonials", icon: MessageSquare },
