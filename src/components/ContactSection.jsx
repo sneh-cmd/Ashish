@@ -1,300 +1,152 @@
 import {
-  Instagram,
-  Linkedin,
   Mail,
-  MapPin,
   Phone,
+  MapPin,
   Send,
-  Twitter,
   Github,
-  Loader2
+  Linkedin,
+  Twitter,
+  MessageCircle,
+  Globe
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
 
 export const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  
-  const validateForm = () => {
-    if (!formData.name.trim()) {
-      toast({
-        title: "Name is required",
-        variant: "destructive"
-      });
-      return false;
-    }
-    
-    if (!formData.email.trim()) {
-      toast({
-        title: "Email is required",
-        variant: "destructive"
-      });
-      return false;
-    } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-      toast({
-        title: "Invalid email format",
-        variant: "destructive"
-      });
-      return false;
-    }
-    
-    if (!formData.message.trim() || formData.message.length < 10) {
-      toast({
-        title: "Message must be at least 10 characters",
-        variant: "destructive"
-      });
-      return false;
-    }
-    
-    return true;
-  };
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!validateForm()) return;
-    
-    setIsSubmitting(true);
-    
-    try {
-      const response = await fetch('https://formspree.io/f/xwpbojaj', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        toast({
-          title: "Message sent! 🎉",
-          description: "I'll get back to you within 24 hours.",
-          variant: "success",
-          className: "bg-green-600 text-white dark:bg-green-500 border border-green-700 shadow-lg"
-        });
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
-      toast({
-        title: "Oops! Something went wrong",
-        description: "Please try again or email me directly at ashishbhalsod21@gmail.com",
-        variant: "destructive"
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative bg-background">
-      <div className="container mx-auto max-w-6xl">
+    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-primary/10 blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-secondary/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
+        {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <span className="inline-block px-3 py-1 text-xs sm:text-sm font-medium rounded-full bg-primary/10 text-primary mb-3 sm:mb-4">
-            Let's Connect
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1 sm:py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6 backdrop-blur-sm">
+            <MessageCircle className="h-3 sm:h-4 w-3 sm:w-4" />
             Get In Touch
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+            <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+              Let's Connect
+            </span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to say hi? My inbox is always open.
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            Ready to bring your ideas to life? I'm excited to hear about your project and discuss how we can work together.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12">
-          {/* Contact Information */}
-          <div className="space-y-6 sm:space-y-8 p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-secondary/20 to-background border border-border">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
-              Contact Details
-            </h3>
-
-            <div className="space-y-4 sm:space-y-6">
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
-                  <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Email</p>
-                  <a
-                    href="mailto:ashishbhalsod21@gmail.com"
-                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
-                  >
-                    ashishbhalsod21@gmail.com
-                  </a>
-                </div>
+        {/* Contact Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          {/* Email Card */}
+          <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-card/50 border border-border backdrop-blur-xl p-4 sm:p-6 hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:bg-card/70">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </div>
-              
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
-                  <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Phone</p>
-                  <a
-                    href="tel:+918866163038"
-                    className="text-sm sm:text-base font-medium hover:text-primary transition-colors"
-                  >
-                    +91 8866163038
-                  </a>
-                </div>
-              </div>
-              
-              <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-accent/30 rounded-lg sm:rounded-xl transition-all duration-300">
-                <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-primary/10 text-primary">
-                  <MapPin className="h-4 w-4 sm:h-5 sm:w-5" />
-                </div>
-                <div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Location</p>
-                  <span className="text-sm sm:text-base font-medium">
-                    Rajkot, Gujarat India
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-6 sm:pt-8">
-              <h4 className="font-medium mb-3 sm:mb-4 text-xs sm:text-sm text-muted-foreground">Find me on</h4>
-              <div className="flex gap-2 sm:gap-3">
-                {[
-                  {
-                    icon: Linkedin,
-                    label: "LinkedIn",
-                    url: "https://www.linkedin.com/in/ashishbhalsod",
-                  },
-                  {
-                    icon: Twitter,
-                    label: "Twitter",
-                    url: "#",
-                  },
-                  {
-                    icon: Github,
-                    label: "GitHub",
-                    url: "https://github.com/ashishbhalsod",
-                  },
-                  {
-                    icon: Instagram,
-                    label: "Instagram",
-                    url: "#",
-                  },
-                ].map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-accent hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all duration-300"
-                    aria-label={social.label}
-                  >
-                    <social.icon className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
-                ))}
+              <div className="flex-1">
+                <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Email</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-2 sm:mb-4">Send me a message anytime</p>
+                <a 
+                  href="mailto:ashishbhalsod21@gmail.com" 
+                  className="text-primary hover:text-primary/80 font-medium transition-colors group-hover:translate-x-1 inline-block"
+                >
+                  ashishbhalsod21@gmail.com
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-card border border-border shadow-sm">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary"></span>
-              Send Me a Message
-            </h3>
-
-            <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
-              <div className="space-y-1">
-                <label
-                  htmlFor="name"
-                  className="text-xs sm:text-sm font-medium text-muted-foreground"
-                >
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
-                  placeholder="John Doe"
-                />
+          {/* Phone Card */}
+          <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-card/50 border border-border backdrop-blur-xl p-4 sm:p-6 hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:bg-card/70">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </div>
-
-              <div className="space-y-1">
-                <label
-                  htmlFor="email"
-                  className="text-xs sm:text-sm font-medium text-muted-foreground"
+              <div className="flex-1">
+                <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Phone</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-2 sm:mb-4">Available for calls</p>
+                <a 
+                  href="tel:+918866163038" 
+                  className="text-primary hover:text-primary/80 font-medium transition-colors group-hover:translate-x-1 inline-block"
                 >
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all text-sm sm:text-base"
-                  placeholder="john@example.com"
-                />
+                  +91 8866163038
+                </a>
               </div>
+            </div>
+          </div>
 
-              <div className="space-y-1">
-                <label
-                  htmlFor="message"
-                  className="text-xs sm:text-sm font-medium text-muted-foreground"
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all resize-none text-sm sm:text-base"
-                  placeholder="Hey, I'd love to collaborate on..."
-                />
+          {/* Location Card */}
+          <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-card/50 border border-border backdrop-blur-xl p-4 sm:p-6 hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:bg-card/70">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
               </div>
+              <div className="flex-1">
+                <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Location</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-2 sm:mb-4">Based in India</p>
+                <span className="text-primary font-medium group-hover:translate-x-1 inline-block transition-transform">
+                  Rajkot, Gujarat
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={cn(
-                  "w-full flex items-center justify-center gap-2 py-2 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl bg-gradient-to-r from-primary to-purple-600 text-white font-medium hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/20 text-sm sm:text-base",
-                  isSubmitting && "opacity-80 cursor-not-allowed"
-                )}
+        {/* Social Links Section */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Connect With Me</h3>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            {[
+              {
+                icon: Github,
+                label: "GitHub",
+                url: "https://github.com/ashishbhalsod",
+                color: "hover:bg-gray-900"
+              },
+              {
+                icon: Linkedin,
+                label: "LinkedIn", 
+                url: "https://www.linkedin.com/in/ashishbhalsod",
+                color: "hover:bg-blue-600"
+              },
+              {
+                icon: Twitter,
+                label: "Twitter",
+                url: "#",
+                color: "hover:bg-sky-500"
+              },
+              {
+                icon: Globe,
+                label: "Portfolio",
+                url: "#",
+                color: "hover:bg-primary"
+              }
+            ].map((social, index) => (
+              <a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group relative overflow-hidden rounded-lg sm:rounded-xl border border-border bg-card/50 backdrop-blur-sm p-3 sm:p-4 transition-all duration-300 hover:shadow-xl hover:scale-105 ${social.color} hover:text-white`}
+                aria-label={social.label}
               >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="h-4 w-4 sm:h-5 sm:w-5 animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Send Message
-                    <Send size={16} className="sm:size-[18px]" />
-                  </>
-                )}
-              </button>
-            </form>
+                <div className="flex items-center justify-center gap-2 sm:gap-3">
+                  <social.icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-sm sm:font-medium">{social.label}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white text-sm sm:text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <Send className="h-3 sm:h-4 w-3 sm:w-4" />
+            Let's Build Something Amazing Together
           </div>
         </div>
       </div>
