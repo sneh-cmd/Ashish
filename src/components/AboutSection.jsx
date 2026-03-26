@@ -114,7 +114,7 @@ export const AboutSection = () => {
                   {/* Achievements */}
                   <div className="flex-1 text-center md:text-left">
                     <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">Ashish Bhalsod</h2>
-                    <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Software Developer</p>
+                    <p className="text-primary text-base sm:text-lg font-semibold mb-3 sm:mb-4">Full-Stack Developer</p>
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                       {achievements.map((achievement, index) => (
                         <div key={index} className={`p-2 sm:p-3 rounded-xl bg-background/50 border border-border transition-all duration-300 hover:scale-105 hover:border-primary/30 ${counter === index ? 'bg-primary/10 border-primary/50' : ''}`}>
