@@ -38,18 +38,18 @@ export const ContactSection = () => {
         {/* Contact Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {/* Email Card */}
-          <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-card/50 border border-border backdrop-blur-xl p-4 sm:p-6 hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:bg-card/70">
+          <div className="group relative overflow-hidden rounded-xl sm:rounded-2xl bg-card/50 border border-border backdrop-blur-xl p-3 sm:p-6 hover:shadow-2xl hover:border-primary/30 transition-all duration-500 hover:bg-card/70">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="relative z-10 flex items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+            <div className="relative z-10 flex items-center gap-2 sm:gap-4">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <Mail className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg sm:text-xl font-semibold mb-1 sm:mb-2">Email</h3>
-                <p className="text-sm sm:text-base text-muted-foreground mb-2 sm:mb-4">Send me a message anytime</p>
+                <h3 className="text-base sm:text-xl font-semibold mb-1 sm:mb-2">Email</h3>
+                <p className="text-xs sm:text-base text-muted-foreground mb-1 sm:mb-4">Send me a message anytime</p>
                 <a 
                   href="mailto:ashishbhalsod21@gmail.com" 
-                  className="text-primary hover:text-primary/80 font-medium transition-colors group-hover:translate-x-1 inline-block"
+                  className="text-primary hover:text-primary/80 text-xs sm:text-sm font-medium transition-colors group-hover:translate-x-1 inline-block"
                 >
                   ashishbhalsod21@gmail.com
                 </a>
