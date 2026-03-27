@@ -129,6 +129,7 @@ const projects = [
     title: "Special Effects API",
     category: "Node.js",
     description: "Backend API for movie streaming with Firebase and MySQL integration.",
+    image: "/src/assets/image/special_effect.png",
     tags: ["Node.js", "REST API", "Movie Streaming"],
     highlights: ["API development", "Firebase integration", "MySQL database"],
     demoUrl: "https://spmovies.online/",
@@ -194,18 +195,6 @@ const projects = [
     demoUrl: "https://serveradminpanel.live.pwtech.pw:3001/login",
     featured: false,
     accentColor: "from-amber-500 to-orange-600",
-    status: "Live",
-  },
-  {
-    id: 17,
-    title: "Special Effects API",
-    category: "Node.js",
-    description: "Backend API for movie streaming with Firebase and MySQL integration.",
-    tags: ["Node.js", "REST API", "Movie Streaming"],
-    highlights: ["API development", "Firebase integration", "MySQL database"],
-    demoUrl: "https://spmovies.online/",
-    featured: false,
-    accentColor: "from-purple-500 to-indigo-600",
     status: "Live",
   }
 ];
