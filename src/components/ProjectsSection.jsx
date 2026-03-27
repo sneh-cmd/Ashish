@@ -5,122 +5,233 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 const projects = [
   {
     id: 1,
-    title: "Childcustody",
+    title: "Child Custody",
     category: "React Native",
-    description: "React Native application for child custody management and tracking.",
-    image: "/projects/childcustody.png",
-    tags: ["React Native", "Mobile App", "Firebase", "Navigation"],
+    description: "US-based child custody management app with calendar and custody scheduling.",
+    tags: ["React Native", "Custody Tracking", "Calendar"],
+    highlights: ["Parent custody management", "Calendar integration", "Custody scheduling"],
     demoUrl: "#",
     githubUrl: "#",
     featured: true,
     accentColor: "from-blue-500 to-cyan-600",
     status: "Live",
-    highlights: ["Child custody tracking", "Real-time updates", "Secure data storage"]
   },
   {
     id: 2,
-    title: "Limo",
+    title: "Special Effects",
     category: "React Native",
-    description: "Luxury transportation booking app with real-time tracking and payment integration.",
-    image: "/projects/limo.png",
-    tags: ["React Native", "GPS Tracking", "Payment Gateway", "Real-time"],
-    demoUrl: "#",
+    description: "Online movie streaming app with watch and download capabilities.",
+    image: "/src/assets/image/special_effect.png",
+    tags: ["React Native", "Video Download", "Streaming"],
+    highlights: ["Online movie streaming", "Download movies", "Video player"],
+    demoUrl: "https://spmovies.online/",
     githubUrl: "#",
     featured: true,
     accentColor: "from-purple-500 to-indigo-600",
     status: "Live",
-    highlights: ["Luxury transport booking", "Real-time GPS tracking", "Payment integration"]
   },
   {
     id: 3,
-    title: "Astar",
+    title: "Limo",
     category: "React Native",
-    description: "Multi-platform mobile application with advanced features and modern UI.",
-    image: "/projects/astar.png",
-    tags: ["React Native", "Cross-platform", "Modern UI", "API Integration"],
-    demoUrl: "#",
+    description: "US luxury car booking app with driver/user apps and bid system.",
+    tags: ["React Native", "Luxury Transport", "Driver App"],
+    highlights: ["Luxury car booking", "Driver & User apps", "Bid system"],
+    demoUrl: "https://play.google.com/store/apps/details?id=com.limo.customer",
     githubUrl: "#",
-    featured: true,
-    accentColor: "from-emerald-500 to-teal-600",
+    featured: false,
+    accentColor: "from-orange-500 to-red-600",
     status: "Live",
-    highlights: ["Cross-platform support", "Modern UI/UX", "API integration"]
   },
   {
     id: 4,
     title: "Constitutional",
     category: "React Native",
-    description: "Educational app for constitutional studies and reference materials.",
-    image: "/projects/constitutional.png",
-    tags: ["React Native", "Education", "Content Management", "Search"],
+    description: "US-based law app with lawyer information, PDFs, and legal rules.",
+    tags: ["React Native", "Legal", "Law PDFs"],
+    highlights: ["Lawyer Directory", "Legal information", "Lawyer details"],
+    demoUrl: "https://apps.apple.com/us/app/constitutional/id1558117839",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-violet-500 to-purple-600",
+    status: "Live",
+  },
+  {
+    id: 5,
+     title: "Cleaning Service",
+    category: "React Native",
+    description: "Australia-based cleaning app for house cleaning and worker booking.",
+    tags: ["React Native", "Service Booking", "House Cleaning"],
+    highlights: ["House cleaning services", "Worker booking", "Australia-based"],
     demoUrl: "#",
     githubUrl: "#",
     featured: false,
     accentColor: "from-amber-500 to-orange-600",
     status: "Live",
-    highlights: ["Educational content", "Search functionality", "Reference materials"]
-  },
-  {
-    id: 5,
-    title: "Cleaning Service",
-    category: "React Native",
-    description: "On-demand cleaning service booking app with scheduling and payment features.",
-    image: "/projects/cleaning-service.png",
-    tags: ["React Native", "Booking System", "Scheduling", "Payments"],
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
-    accentColor: "from-violet-500 to-purple-600",
-    status: "Live",
-    highlights: ["Service booking", "Scheduling system", "Payment processing"]
   },
   {
     id: 6,
-    title: "TV App - Movie Streaming",
-    category: "iOS",
-    description: "Native iOS TV application for watching online movies and streaming content.",
-    image: "/projects/tv-app.png",
-    tags: ["iOS Native", "Swift", "Video Streaming", "TVOS"],
+    title: "Task Manager - Solar Panel",
+    category: "React Native",
+    description: "Task management app for solar panel company with multi-role system.",
+    tags: ["React Native", "Employee Tasks", "Solar Energy"],
+    highlights: ["Task assignment", "Employee management", "Multi-role system"],
     demoUrl: "#",
     githubUrl: "#",
     featured: true,
     accentColor: "from-rose-500 to-pink-600",
     status: "Live",
-    highlights: ["Video streaming", "Native iOS", "TVOS support", "Online movies"]
   },
   {
     id: 7,
+    title: "Astar",
+    category: "React Native",
+    description: "AC service booking app with question-based selection and payments.",
+    tags: ["React Native", "Payment Gateway", "AC Service"],
+    highlights: ["AC service booking", "Question-based selection", "Online payments"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: true,
+    accentColor: "from-emerald-500 to-teal-600",
+    status: "Live",
+  },
+  {
+    id: 8,
     title: "Zoombo TV",
     category: "iOS",
-    description: "Entertainment TV application with multiple content categories and user profiles.",
-    image: "/projects/zoombo-tv.png",
-    tags: ["iOS Native", "Swift", "Entertainment", "User Profiles"],
+    description: "Entertainment TV app with multiple content categories and user profiles.",
+    tags: ["iOS Native", "Swift", "Entertainment"],
+    highlights: ["Entertainment platform", "User profiles", "Content categories"],
     demoUrl: "#",
     githubUrl: "#",
     featured: false,
     accentColor: "from-orange-500 to-red-600",
     status: "Live",
-    highlights: ["Entertainment platform", "User profiles", "Content categories"]
   },
   {
-    id: 8,
-    title: "DNS Management System",
+    id: 9,
+    title: "DNS Manager",
     category: "React.js",
-    description: "Web-based DNS management system for domain and network administration.",
-    image: "/projects/dns-management.png",
-    tags: ["React.js", "Node.js", "DNS", "Admin Panel"],
-    demoUrl: "#",
+    description: "Complete DNS management with CRUD operations and Apache integration.",
+    tags: ["React.js", "Node.js", "MongoDB", "Socket.IO"],
+    highlights: ["DNS CRUD operations", "Auto setup", "Apache integration"],
+    demoUrl: "https://serveradminpanel.live.pwtech.pw:3001/login",
     githubUrl: "#",
     featured: false,
     accentColor: "from-cyan-500 to-blue-600",
     status: "Live",
-    highlights: ["DNS management", "Admin panel", "Network administration"]
+  },
+  {
+    id: 10,
+    title: "CloudGPS",
+    category: "Node.js",
+    description: "GPS tracking system for vehicles with VL103 device integration and real-time map monitoring.",
+    tags: ["Node.js", "GPS Tracking", "Real-time Monitoring"],
+    highlights: ["Vehicle tracking", "VL103 device integration", "Live location monitoring"],
+    demoUrl: "https://cloudgps.iamtreked.com/",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-amber-500 to-orange-600",
+    status: "Live",
+  },
+  {
+    id: 11,
+    title: "Special Effects API",
+    category: "Node.js",
+    description: "Backend API for movie streaming with Firebase and MySQL integration.",
+    tags: ["Node.js", "REST API", "Movie Streaming"],
+    highlights: ["API development", "Firebase integration", "MySQL database"],
+    demoUrl: "https://spmovies.online/",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-purple-500 to-indigo-600",
+    status: "Live",
+  },
+  {
+    id: 12,
+    title: "Lalby Galby",
+    category: "Node.js",
+    description: "Live gaming app with coin transactions and time-based contests.",
+    tags: ["Node.js", "MongoDB", "Gaming Platform"],
+    highlights: ["Live gaming", "Coin transactions", "Time-based contests"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-emerald-500 to-teal-600",
+    status: "Live",
+  },
+  {
+    id: 13,
+    title: "AI Fridge Organizer",
+    category: "Node.js",
+    description: "AI-powered fridge management with product detection and inventory tracking.",
+    tags: ["Node.js", "AI Vision", "Smart Home"],
+    highlights: ["AI product detection", "Firebase realtime", "Inventory tracking"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-amber-500 to-orange-600",
+    status: "Live",
+  },
+  {
+    id: 14,
+    title: "Automation Scripts",
+    category: "Node.js",
+    description: "Automated backup and migration scripts with scheduling and WhatsApp notifications.",
+    tags: ["Node.js", "Database Backup", "WhatsApp API"],
+    highlights: ["Automated backups", "Scheduled migrations", "WhatsApp notifications"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-violet-500 to-purple-600",
+    status: "Live",
+  },
+  {
+    id: 15,
+    title: "Backend API Projects",
+    category: "Node.js",
+    description: "Multiple API projects for various backend services and applications.",
+    tags: ["Node.js", "Backend Development", "API Gateway"],
+    highlights: ["RESTful APIs", "Backend services & API integration", "Microservices architecture"],
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-rose-500 to-pink-600",
+    status: "Live",
+  },
+  {
+    id: 16,
+    title: "DNS Management System",
+    category: "Node.js",
+    description: "Complete DNS management system with CRUD operations and Apache server setup.",
+    tags: ["Node.js", "DNS Management", "Apache Setup"],
+    highlights: ["DNS records management", "Server configuration", "Bulk operations"],
+    demoUrl: "https://serveradminpanel.live.pwtech.pw:3001/login",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-amber-500 to-orange-600",
+    status: "Live",
+  },
+  {
+    id: 17,
+    title: "Special Effects API",
+    category: "Node.js",
+    description: "Backend API for movie streaming with Firebase and MySQL integration.",
+    tags: ["Node.js", "REST API", "Movie Streaming"],
+    highlights: ["API development", "Firebase integration", "MySQL database"],
+    demoUrl: "https://spmovies.online/",
+    githubUrl: "#",
+    featured: false,
+    accentColor: "from-purple-500 to-indigo-600",
+    status: "Live",
   }
 ];
 
 const categoryColors = {
   "React Native": "from-blue-500/20 to-cyan-600/20 text-blue-600 border-blue-500/30",
   "iOS": "from-purple-500/20 to-indigo-600/20 text-purple-600 border-purple-500/30",
-  "React.js": "from-emerald-500/20 to-teal-600/20 text-emerald-600 border-emerald-500/30"
+  "React.js": "from-emerald-500/20 to-teal-600/20 text-emerald-600 border-emerald-500/30",
+  "Node.js": "from-amber-500/20 to-orange-600/20 text-amber-600 border-amber-500/30"
 };
 
 export const ProjectsSection = () => {
@@ -404,7 +515,7 @@ export const ProjectsSection = () => {
                         {project.demoUrl === "#" ? "Coming Soon" : "Live Demo"}
                       </motion.a>
                       
-                      <motion.a
+                      {/* <motion.a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -419,7 +530,7 @@ export const ProjectsSection = () => {
                       >
                         <Github size={16} />
                         Code
-                      </motion.a>
+                      </motion.a> */}
                     </div>
                   </div>
 
@@ -561,16 +672,11 @@ export const ProjectsSection = () => {
 
               {/* Video Player */}
               <div className="aspect-video bg-black">
-                <video
-                  ref={videoRef}
-                  src={selectedVideo.video}
-                  controls
-                  autoPlay
+                <img
+                  src={selectedVideo.image}
+                  alt={selectedVideo.title}
                   className="w-full h-full object-contain"
-                  onEnded={handleCloseVideo}
-                >
-                  Your browser does not support the video tag.
-                </video>
+                />
               </div>
 
               {/* Modal Footer */}
