@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink, Github, ChevronUp, Star, Code, ChevronDown, MoveRight, Filter, Sparkles, Award, Zap, Play, Eye, Calendar, Users, X } from "lucide-react";
+import { ArrowRight, ExternalLink, ChevronUp, Star, ChevronDown, MoveRight, Filter, Sparkles, Award, Zap, Play, Eye, Calendar, Users, X } from "lucide-react";
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
@@ -11,7 +11,6 @@ const projects = [
     tags: ["React Native", "Custody Tracking", "Calendar"],
     highlights: ["Parent custody management", "Calendar integration", "Custody scheduling"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: true,
     accentColor: "from-blue-500 to-cyan-600",
     status: "Live",
@@ -25,7 +24,6 @@ const projects = [
     tags: ["React Native", "Video Download", "Streaming"],
     highlights: ["Online movie streaming", "Download movies", "Video player"],
     demoUrl: "https://spmovies.online/",
-    githubUrl: "#",
     featured: true,
     accentColor: "from-purple-500 to-indigo-600",
     status: "Live",
@@ -38,7 +36,6 @@ const projects = [
     tags: ["React Native", "Luxury Transport", "Driver App"],
     highlights: ["Luxury car booking", "Driver & User apps", "Bid system"],
     demoUrl: "https://play.google.com/store/apps/details?id=com.limo.customer",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-orange-500 to-red-600",
     status: "Live",
@@ -51,7 +48,6 @@ const projects = [
     tags: ["React Native", "Legal", "Law PDFs"],
     highlights: ["Lawyer Directory", "Legal information", "Lawyer details"],
     demoUrl: "https://apps.apple.com/us/app/constitutional/id1558117839",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-violet-500 to-purple-600",
     status: "Live",
@@ -64,7 +60,6 @@ const projects = [
     tags: ["React Native", "Service Booking", "House Cleaning"],
     highlights: ["House cleaning services", "Worker booking", "Australia-based"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-amber-500 to-orange-600",
     status: "Live",
@@ -77,7 +72,6 @@ const projects = [
     tags: ["React Native", "Employee Tasks", "Solar Energy"],
     highlights: ["Task assignment", "Employee management", "Multi-role system"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: true,
     accentColor: "from-rose-500 to-pink-600",
     status: "Live",
@@ -90,7 +84,6 @@ const projects = [
     tags: ["React Native", "Payment Gateway", "AC Service"],
     highlights: ["AC service booking", "Question-based selection", "Online payments"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: true,
     accentColor: "from-emerald-500 to-teal-600",
     status: "Live",
@@ -103,7 +96,6 @@ const projects = [
     tags: ["iOS Native", "Swift", "Entertainment"],
     highlights: ["Entertainment platform", "User profiles", "Content categories"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-orange-500 to-red-600",
     status: "Live",
@@ -116,7 +108,6 @@ const projects = [
     tags: ["React.js", "Node.js", "MongoDB", "Socket.IO"],
     highlights: ["DNS CRUD operations", "Auto setup", "Apache integration"],
     demoUrl: "https://serveradminpanel.live.pwtech.pw:3001/login",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-cyan-500 to-blue-600",
     status: "Live",
@@ -129,7 +120,6 @@ const projects = [
     tags: ["Node.js", "GPS Tracking", "Real-time Monitoring"],
     highlights: ["Vehicle tracking", "VL103 device integration", "Live location monitoring"],
     demoUrl: "https://cloudgps.iamtreked.com/",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-amber-500 to-orange-600",
     status: "Live",
@@ -142,7 +132,6 @@ const projects = [
     tags: ["Node.js", "REST API", "Movie Streaming"],
     highlights: ["API development", "Firebase integration", "MySQL database"],
     demoUrl: "https://spmovies.online/",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-purple-500 to-indigo-600",
     status: "Live",
@@ -155,7 +144,6 @@ const projects = [
     tags: ["Node.js", "MongoDB", "Gaming Platform"],
     highlights: ["Live gaming", "Coin transactions", "Time-based contests"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-emerald-500 to-teal-600",
     status: "Live",
@@ -168,7 +156,6 @@ const projects = [
     tags: ["Node.js", "AI Vision", "Smart Home"],
     highlights: ["AI product detection", "Firebase realtime", "Inventory tracking"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-amber-500 to-orange-600",
     status: "Live",
@@ -181,7 +168,6 @@ const projects = [
     tags: ["Node.js", "Database Backup", "WhatsApp API"],
     highlights: ["Automated backups", "Scheduled migrations", "WhatsApp notifications"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-violet-500 to-purple-600",
     status: "Live",
@@ -194,7 +180,6 @@ const projects = [
     tags: ["Node.js", "Backend Development", "API Gateway"],
     highlights: ["RESTful APIs", "Backend services & API integration", "Microservices architecture"],
     demoUrl: "#",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-rose-500 to-pink-600",
     status: "Live",
@@ -207,7 +192,6 @@ const projects = [
     tags: ["Node.js", "DNS Management", "Apache Setup"],
     highlights: ["DNS records management", "Server configuration", "Bulk operations"],
     demoUrl: "https://serveradminpanel.live.pwtech.pw:3001/login",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-amber-500 to-orange-600",
     status: "Live",
@@ -220,7 +204,6 @@ const projects = [
     tags: ["Node.js", "REST API", "Movie Streaming"],
     highlights: ["API development", "Firebase integration", "MySQL database"],
     demoUrl: "https://spmovies.online/",
-    githubUrl: "#",
     featured: false,
     accentColor: "from-purple-500 to-indigo-600",
     status: "Live",
@@ -424,32 +407,15 @@ export const ProjectsSection = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: hoveredProject === project.id ? 1 : 0 }}
                     >
-                      {/* Video Play Button */}
+                      {/* Image View Button */}
                       <motion.button
                         onClick={() => handleVideoPlay(project)}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="p-3 rounded-full backdrop-blur-sm border bg-white/20 text-white border-white/30 hover:bg-white/30 transition-all duration-300"
                       >
-                        <Play size={20} />
+                        <Eye size={20} />
                       </motion.button>
-                      
-                      {/* Code Button */}
-                      <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className={`p-3 rounded-full backdrop-blur-sm border transition-all duration-300 ${
-                          project.githubUrl === "#" 
-                            ? "bg-gray-500/50 text-gray-300 border-gray-500/30 cursor-not-allowed"
-                            : "bg-white/20 text-white border-white/30 hover:bg-white/30"
-                        }`}
-                        onClick={(e) => project.githubUrl === "#" && e.preventDefault()}
-                      >
-                        <Code size={20} />
-                      </motion.a>
                     </motion.div>
                   </div>
 
@@ -514,23 +480,6 @@ export const ProjectsSection = () => {
                         <Eye size={16} />
                         {project.demoUrl === "#" ? "Coming Soon" : "Live Demo"}
                       </motion.a>
-                      
-                      {/* <motion.a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className={`inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium border transition-all duration-300 ${
-                          project.githubUrl === "#"
-                            ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
-                            : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
-                        }`}
-                        onClick={(e) => project.githubUrl === "#" && e.preventDefault()}
-                      >
-                        <Github size={16} />
-                        Code
-                      </motion.a> */}
                     </div>
                   </div>
 
@@ -615,18 +564,6 @@ export const ProjectsSection = () => {
                 Contact Me
                 <ArrowRight size={18} />
               </motion.button>
-              
-              <motion.a
-                href="https://github.com/ashishbhalsod"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center gap-3 px-4 sm:px-6 py-2 sm:py-4 rounded-2xl text-xs sm:text-sm md:text-base font-medium border border-border text-foreground hover:border-primary hover:bg-primary/5 transition-all duration-300"
-              >
-                <Github size={18} />
-                View GitHub
-              </motion.a>
             </div>
           </div>
         </motion.div>
@@ -700,21 +637,6 @@ export const ProjectsSection = () => {
                       onClick={(e) => selectedVideo.demoUrl === "#" && e.preventDefault()}
                     >
                       Visit Live Site
-                    </motion.a>
-                    <motion.a
-                      href={selectedVideo.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`px-6 py-2 rounded-lg text-sm font-medium border transition-all duration-300 ${
-                        selectedVideo.githubUrl === "#"
-                          ? "bg-muted text-muted-foreground cursor-not-allowed border-border"
-                          : "bg-background text-foreground border-border hover:border-primary hover:bg-primary/5"
-                      }`}
-                      onClick={(e) => selectedVideo.githubUrl === "#" && e.preventDefault()}
-                    >
-                      View Code
                     </motion.a>
                   </div>
                 </div>
