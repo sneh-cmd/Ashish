@@ -112,19 +112,7 @@ export const ContactSection = () => {
                 url: "https://www.linkedin.com/in/ashishbhalsod",
                 color: "hover:bg-blue-600"
               },
-              {
-                icon: Twitter,
-                label: "Twitter",
-                url: "#",
-                color: "hover:bg-sky-500"
-              },
-              {
-                icon: Globe,
-                label: "Portfolio",
-                url: "#",
-                color: "hover:bg-primary"
-              }
-            ].map((social, index) => (
+              ].map((social, index) => (
               <a
                 key={index}
                 href={social.url}
